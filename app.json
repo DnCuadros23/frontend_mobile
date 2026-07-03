@@ -1,0 +1,72 @@
+{
+  "expo": {
+    "name": "SecureTrace",
+    "slug": "securetrace-mobile",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "scheme": "securetrace",
+    "userInterfaceStyle": "automatic",
+    "ios": {
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSCameraUsageDescription": "SecureTrace usa la cámara para capturar evidencias (fotos y video) de tus casos.",
+        "NSMicrophoneUsageDescription": "SecureTrace usa el micrófono para grabar evidencias de audio.",
+        "NSPhotoLibraryUsageDescription": "SecureTrace accede a tu galería para adjuntar evidencias.",
+        "NSLocationWhenInUseUsageDescription": "SecureTrace usa tu ubicación para registrar dónde ocurrió el incidente."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#123C69",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "permissions": [
+        "CAMERA",
+        "RECORD_AUDIO",
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "READ_MEDIA_IMAGES",
+        "READ_MEDIA_VIDEO"
+      ],
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-secure-store",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "SecureTrace usa la cámara para capturar evidencias.",
+          "microphonePermission": "SecureTrace usa el micrófono para grabar evidencias.",
+          "recordAudioAndroid": true
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "SecureTrace usa tu ubicación para registrar dónde ocurrió el incidente."
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "SecureTrace accede a tu galería para adjuntar evidencias."
+        }
+      ],
+      "expo-font",
+      "expo-audio",
+      "expo-video",
+      "expo-asset"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": ""
+      }
+    }
+  }
+}
